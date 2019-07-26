@@ -12,7 +12,6 @@ module.exports = {
       }
     }
   },
-
   devServer: {
     watchOptions: {
       clientLogLevel: 'warning'
