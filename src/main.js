@@ -11,6 +11,7 @@ import './thirdParty'
 
 import './scss/style.scss'
 import './assets/fonts/bebasneue.css'
+import vuetify from './plugins/vuetify';
 
 setGlobalHelpers()
 Vue.config.productionTip = false
@@ -20,6 +21,7 @@ new Vue({
   name: 'Root',
   router,
   store,
+
   mounted () {
     store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth)
     window.addEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
@@ -28,5 +30,7 @@ new Vue({
   beforeDestroy () {
     window.removeEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
   },
+
+  vuetify,
   render: h => h(AppLayout)
 }).$mount('#app')
